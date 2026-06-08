@@ -1,0 +1,37 @@
+# ============================================================
+# 07: 3D Viewport
+# ============================================================
+# منظر ثلاثي الأبعاد (يعمل في وضع الطرفية للاختبار)
+
+# Viewport3D allows creating 3D scenes
+# Syntax: viewport3d new 
+# Create a 3D viewport
+viewport3d new vp
+
+# Set camera position
+vp.cam = new Camera(0, 0, 5)
+
+# Set light direction
+vp.ligt = new Light(1, -1, 1)
+
+# Set a 3D object
+vp.objet = new Object(0, 0, "cube")
+
+# These are member-mapped properties:
+#   cam  -> Camera  (Vector3 position)
+#   ligt -> Light   (Vector3 direction)
+#   objet-> Object  (Vector3 position + shape name)
+
+# In UI mode, uncomment to display:
+# show()
+
+print("Viewport3D configured:")
+print("  cam:  (0, 0, 5)")
+print("  ligt: (1, -1, 1)")
+print("  objet: cube at (0, 0, 0)")
+
+# Arabic version:
+# منظور3d جديد منظر
+# منظر.كام = جديد Camera(0, 0, 5)
+# منظر.ضوء = جديد Light(1, -1, 1)
+# منظر.كائن = جديد Object(0, 0, "مكعب")

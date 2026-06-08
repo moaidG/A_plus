@@ -1,0 +1,6 @@
+# 07: 3D Viewport
+viewport3d new vp
+vp.cam = new Camera(0, 0, 5)
+vp.ligt = new Light(1, -1, 1)
+vp.objet = new Object(0, 0, "cube")
+print("Viewport3D configured: cam(0,0,5), ligt(1,-1,1), objet(cube at 0,0,0)")

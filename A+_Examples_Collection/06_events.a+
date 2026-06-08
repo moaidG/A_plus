@@ -1,0 +1,9 @@
+# 06: Event Binding
+func onClick() { print("click event fired") }
+func onLoad() { print("load event fired") }
+func onHover() { print("hover event fired") }
+func onLeave() { print("leave event fired") }
+func handleClick() { print("button clicked (no parens)") }
+print("All event handlers defined")
+print("Supported: btn.Click = onClick() and btn.Click = handleClick")
+onClick(); handleClick(); onLoad(); onHover(); onLeave()

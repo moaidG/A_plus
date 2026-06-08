@@ -1,0 +1,59 @@
+# Complete Counter App in A+
+
+let counter = 0
+
+a+ new stackpanel panel
+panel.width = 300
+panel.height = 250
+
+a+ new textblock display
+display.text = "0"
+display.fontsize = 48
+display.horizontalalignment = "Center"
+panel.add(display)
+
+a+ new stackpanel buttonRow
+buttonRow.orientation = "horizontal"
+buttonRow.horizontalalignment = "Center"
+
+a+ new button plusBtn
+plusBtn.content = "+"
+plusBtn.width = 80
+plusBtn.height = 50
+plusBtn.fontsize = 24
+plusBtn.Click = onPlus()
+buttonRow.add(plusBtn)
+
+a+ new button minusBtn
+minusBtn.content = "-"
+minusBtn.width = 80
+minusBtn.height = 50
+minusBtn.fontsize = 24
+minusBtn.Click = onMinus()
+buttonRow.add(minusBtn)
+
+a+ new button resetBtn
+resetBtn.content = "Reset"
+resetBtn.width = 80
+resetBtn.height = 50
+resetBtn.Click = onReset()
+buttonRow.add(resetBtn)
+
+panel.add(buttonRow)
+
+func onPlus() {
+    counter = counter + 1
+    display.text = counter
+}
+
+func onMinus() {
+    counter = counter - 1
+    display.text = counter
+}
+
+func onReset() {
+    counter = 0
+    display.text = counter
+}
+
+show()

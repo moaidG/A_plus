@@ -1,0 +1,42 @@
+# A+ Program Entry Point
+# Usage: a+ index.a  أو  a+ .
+
+let appName = "My A+ Program"
+let appVersion = "1.0.0"
+
+print("═══════════════════════════════════════════")
+print(" " + appName + " v" + appVersion)
+print("═══════════════════════════════════════════")
+
+# OS detection
+let p = platform()
+print("المنصة: " + p)
+
+if (p == "windows")
+    print("سيتم استخدام WPF لواجهة المستخدم")
+
+if (p == "linux")
+    print("سيتم استخدام الوضع النصي")
+
+if (p == "macos")
+    print("سيتم استخدام الوضع النصي")
+
+# Load modules
+# include "utils.a"
+# include "ui.a"
+
+# Main app function
+func run() {
+    print("بدء تشغيل التطبيق...")
+    if (p == "windows") {
+        print("واجهة المستخدم قيد التشغيل...")
+    } else {
+        print("وضع وحدة التحكم...")
+        print("مرحباً بك في A+!")
+    }
+}
+
+# Program entry point
+print("جاري تهيئة البرنامج...")
+run()
+print("تم بنجاح!")

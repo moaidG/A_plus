@@ -1,0 +1,35 @@
+# ============================================================
+# 06: Event Binding
+# ============================================================
+# ربط الأحداث (اختبار في وضع الطرفية)
+
+# Define event handlers
+func onClick() { print("click event fired") }
+func onLoad() { print("load event fired") }
+func onHover() { print("hover event fired") }
+func onLeave() { print("leave event fired") }
+func onTextChange() { print("text changed") }
+
+# Event handler with no args (no parens)
+func handleClick() { print("button clicked (no parens)") }
+
+# These parse correctly (console mode):
+# In UI mode, they would bind to real WPF events
+# btn.Click = onClick()
+# btn.Click = handleClick       (without parens - supported!)
+# btn.Loaded = onLoad()
+# btn.MouseEnter = onHover()
+# btn.MouseLeave = onLeave()
+# input.TextChanged = onTextChange()
+
+# Test event binding syntax (parsing test):
+print("All event handlers defined successfully")
+print("Event binding supports:")
+print("  - obj.Event = handler()    (FuncCallNode)")
+print("  - obj.Event = handler      (VariableNode - auto-wrapped)")
+
+# Test the handlers actually work
+onClick()
+handleClick()
+onLoad()
+onTextChange()

@@ -1,0 +1,23 @@
+# Functions in A+
+
+# Basic function
+func add(a, b) {
+    return a + b
+}
+
+func greet(name) {
+    print("Hello " + name)
+}
+
+# Function with default parameter
+func say(msg = "Hello") {
+    print(msg)
+}
+
+# Calling functions
+let result = add(5, 3)
+print("5 + 3 = " + result)
+
+greet("A+")
+say()
+say("Hi there!")

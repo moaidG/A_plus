@@ -1,0 +1,9 @@
+# Trace & Debugger Demo - التتبع والمصحح
+print("=== Trace & Debugger Demo ===")
+let x = 42
+let msg = "Hello A+"
+trace("قبل المصحح: x=" + x + ", msg=" + msg)
+print("قبل debugger ...")
+debugger
+print("بعد debugger: x=" + x)
+print("انتهى")

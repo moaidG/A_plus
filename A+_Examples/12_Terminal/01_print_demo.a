@@ -1,0 +1,9 @@
+# Print Demo - أوامر الطباعة
+print("=== Print Demo ===")
+print(42)
+print(true)
+اطبع("بالعربية")
+ط("اختصار ط")
+let x = 10
+print("قيمة x = " + x)
+print("نهاية العرض")

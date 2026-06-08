@@ -1,0 +1,50 @@
+# ============================================================
+# 02: Functions
+# ============================================================
+# الدوال
+
+# Simple function
+func greet(name) {
+    return "Hello, " + name
+}
+print(greet("A+"))
+
+# Multiple params
+func add(a, b) {
+    return a + b
+}
+print("3 + 4 = " + add(3, 4))
+
+# Arabic function
+دالة ترحيب(الاسم) {
+    ارجع "مرحباً " + الاسم
+}
+اطبع(ترحيب("عالم"))
+
+# Function composition
+func double(x) { return x * 2 }
+func square(x) { return x * x }
+func compose(f, g, x) {
+    return f(g(x))
+}
+print("compose(square, double, 3) = " + compose(square, double, 3))
+
+# Recursion: factorial
+func factorial(n) {
+    if (n <= 1) { return 1 }
+    return n * factorial(n - 1)
+}
+print("5! = " + factorial(5))
+
+# Recursion: fibonacci
+func fib(n) {
+    if (n <= 1) { return n }
+    return fib(n - 1) + fib(n - 2)
+}
+print("fib(10) = " + fib(10))
+
+# Default-like behavior (arguments default to 0/null)
+func multiply(a, b) {
+    return a * b
+}
+print("multiply(6, 7) = " + multiply(6, 7))

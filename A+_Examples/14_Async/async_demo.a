@@ -1,0 +1,26 @@
+// Async function
+async func fetchData() {
+    return 42
+}
+
+// Await
+async func main() {
+    print("جارٍ جلب البيانات...")
+    let result = await fetchData()
+    print("النتيجة: " + result)
+}
+
+main()
+
+// Go — fire and forget
+go fetchData()
+print("هذا يطبع فوراً")
+
+// Spawn
+spawn worker(n) {
+    print("بدأت المهمة: " + n)
+    return n * 2
+}
+
+let r = await worker(10)
+print("ناتج worker: " + r)

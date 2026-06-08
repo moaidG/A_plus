@@ -1,0 +1,322 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "A+",
+  "scopeName": "source.a-plus",
+  "fileTypes": ["a", "axml", "aplus", "ra","a+","A","A+"],
+
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#axml" },
+    { "include": "#a-plus-new" },
+    { "include": "#events" },
+    { "include": "#oop" },
+    { "include": "#functions" },
+    { "include": "#variables" },
+    { "include": "#keywords" },
+    { "include": "#operators" },
+    { "include": "#punctuation" },
+    { "include": "#properties" }
+  ],
+
+  "repository": {
+
+
+    "comments": {
+      "patterns": [
+        { "match": "///.*", "name": "comment.block.documentation" },
+        { "match": "//.*", "name": "comment.line.double-slash" },
+        { "begin": "#", "end": "$", "name": "comment.line.number-sign" },
+        { "begin": "/\\*", "end": "\\*/", "name": "comment.block" }
+      ]
+    },
+
+
+    "strings": {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.quoted.double",
+      "patterns": [
+        { "match": "\\\\.", "name": "constant.character.escape" }
+      ]
+    },
+
+
+    "numbers": {
+      "match": "\\b\\d+(\\.\\d+)?\\b",
+      "name": "constant.numeric"
+    },
+
+
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(if|else|while|for|return|break|continue|switch|case|default|try|catch|throw|finally|in|include|from|print|show|extends|extern|typeof|platform|help|input|dotnet)\\b|(?<![\\w\\u0600-\\u06FF])(إذا|لو|وإلا|طالما|بينما|لكل|ارجع|عود|توقف|كسر|استمر|اختيار|حالة|افتراضي|حاول|التقط|ارم|وأخيراً|أخيرا|اطبع|اعرض|ضم|استدعاء|من|يرث|خارجي|منصة|نوع|مساعدة|اقرأ|نت)(?![\\w\\u0600-\\u06FF])",
+          "name": "keyword.control"
+        },
+
+        {
+          "match": "\\b(public|private|static|abstract|interface|class|new)\\b|(?<![\\w\\u0600-\\u06FF])(عام|خاص|ثابت|مجرد|واجهة|صنف|فئة|جديد)(?![\\w\\u0600-\\u06FF])",
+          "name": "keyword.declaration"
+        },
+
+        {
+          "match": "\\b(and|or|not|in)\\b|(?<![\\w\\u0600-\\u06FF])(و|أو|ليس|في)(?![\\w\\u0600-\\u06FF])",
+          "name": "keyword.operator.logical"
+        },
+
+        {
+          "match": "\\ba\\+",
+          "name": "keyword.control.a-plus"
+        },
+
+        {
+          "match": "\\b(import|as|await|go|spawn|debugger|nil|mediaelement|viewport3d|export|async)\\b|(?<![\\w\\u0600-\\u06FF])(استورد|كـ|انتظر|انطلق|أنشئ|مصحح|عدم|وسائط|منظور3d|صدر|غيرمتزامن)(?![\\w\\u0600-\\u06FF])",
+          "name": "keyword.control"
+        },
+
+        {
+          "match": "\\b(true|false)\\b|(?<![\\w\\u0600-\\u06FF])(صحيح|خاطئ)(?![\\w\\u0600-\\u06FF])",
+          "name": "constant.language.boolean"
+        },
+
+        {
+          "match": "\\b(self|this)\\b|(?<![\\w\\u0600-\\u06FF])(نفس|هذا)(?![\\w\\u0600-\\u06FF])",
+          "name": "variable.language.self"
+        }
+      ]
+    },
+
+    
+    "oop": {
+  "patterns": [
+
+    
+    {
+      "match": "\\b(class|صنف)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+      "captures": {
+        "1": { "name": "keyword.declaration" },
+        "2": { "name": "entity.name.type.class" }
+      }
+    },
+
+    
+    {
+      "match": "\\b(class|صنف)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s*/\\s*([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+      "captures": {
+        "1": { "name": "keyword.declaration" },
+        "2": { "name": "entity.name.type.class" },
+        "3": { "name": "entity.name.type.class" }
+      }
+    },
+
+   
+    {
+      "match": "\\b(abstract|مجرد)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+      "captures": {
+        "1": { "name": "keyword.declaration" },
+        "2": { "name": "entity.name.type.class" }
+      }
+    },
+
+    
+    {
+      "match": "\\b(interface|واجهة)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+      "captures": {
+        "1": { "name": "keyword.declaration" },
+        "2": { "name": "entity.name.type.interface" }
+      }
+    },
+
+    
+    {
+      "match": "\\b(class|صنف|فئة)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s*:\\s*([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+      "captures": {
+        "1": { "name": "keyword.declaration" },
+        "2": { "name": "entity.name.type.class" },
+        "3": { "name": "entity.name.type.class" }
+      }
+    },
+
+    
+    {
+      "match": "\\b(class|صنف|فئة)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s+(extends|يرث)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+      "captures": {
+        "1": { "name": "keyword.declaration" },
+        "2": { "name": "entity.name.type.class" },
+        "3": { "name": "keyword.control" },
+        "4": { "name": "entity.name.type.class" }
+      }
+    },
+
+    
+    {
+      "match": "\\b(interface|واجهة)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s+(extends|يرث)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+      "captures": {
+        "1": { "name": "keyword.declaration" },
+        "2": { "name": "entity.name.type.interface" },
+        "3": { "name": "keyword.control" },
+        "4": { "name": "entity.name.type.interface" }
+      }
+    }
+
+  ]
+},
+
+
+    "axml": {
+      "patterns": [
+        {
+          "begin": "(<)([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF\\.]*)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin" },
+            "2": { "name": "entity.name.tag" }
+          },
+          "end": "(/?>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.end" }
+          },
+          "patterns": [
+            {
+              "match": "([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF\\.]*)\\s*(=)",
+              "captures": {
+                "1": { "name": "entity.other.attribute-name" },
+                "2": { "name": "punctuation.separator.key-value" }
+              }
+            },
+            {
+              "include": "#strings"
+            }
+          ]
+        },
+        {
+          "begin": "(</)([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF\\.]*)",
+          "beginCaptures": {
+            "1": { "name": "punctuation.definition.tag.begin" },
+            "2": { "name": "entity.name.tag" }
+          },
+          "end": "(>)",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.tag.end" }
+          }
+        }
+      ]
+    },
+
+
+    "functions": {
+      "patterns": [
+
+        {
+          "match": "\\b(func|function|دالة)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+          "captures": {
+            "1": { "name": "keyword.declaration" },
+            "2": { "name": "entity.name.function" }
+          }
+        },
+
+        {
+          "match": "(?!\\b(?:if|else|while|for|return|break|continue|switch|case|default|try|catch|throw|finally|in|print|show|new|class|and|or|not|true|false|let|this|self|public|private|static|abstract|interface|include|from|extern|extends|typeof|platform)\\b)([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s*(?=\\()",
+          "name": "entity.name.function"
+        }
+      ]
+    },
+
+
+    "variables": {
+      "patterns": [
+        {
+          "match": "\\b(let|متغير|م>|م)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+          "captures": {
+            "1": { "name": "keyword.declaration" },
+            "2": { "name": "variable.other" }
+          }
+        }
+      ]
+    },
+
+
+    "operators": {
+      "patterns": [
+        { "match": "\\+=|-=|\\*=|/=", "name": "keyword.operator.assignment" },
+        { "match": "==|!=|<=|>=", "name": "keyword.operator.comparison" },
+        { "match": "[+\\-*/%]", "name": "keyword.operator.arithmetic" },
+        { "match": "=>", "name": "keyword.operator.arrow" },
+        { "match": "=", "name": "keyword.operator.assignment" }
+      ]
+    },
+
+ 
+    "punctuation": {
+      "patterns": [
+        { "match": "[{}()\\[\\]]", "name": "punctuation.bracket" },
+        { "match": "[;,.]", "name": "punctuation.separator" },
+        { "match": ":", "name": "punctuation.separator.colon" }
+      ]
+    },
+
+    "events": {
+      "patterns": [
+        {
+          "match": "([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\.([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s*=\\s*([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s*(?=\\()",
+          "captures": {
+            "1": { "name": "variable.other.object" },
+            "2": { "name": "entity.name.tag" },
+            "3": { "name": "entity.name.function" }
+          }
+        }
+      ]
+    },
+
+    "a-plus-new": {
+      "patterns": [
+        {
+          "match": "(a\\+)\\s+(new|جديد)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+          "captures": {
+            "1": { "name": "keyword.control.a-plus" },
+            "2": { "name": "keyword.declaration" },
+            "3": { "name": "entity.name.type.class" },
+            "4": { "name": "variable.other" }
+          }
+        },
+        {
+          "match": "(viewport3d|منظور3d)\\s+(new|جديد)\\s+([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)",
+          "captures": {
+            "1": { "name": "entity.name.type.class" },
+            "2": { "name": "keyword.declaration" },
+            "3": { "name": "variable.other" }
+          }
+        }
+      ]
+    },
+
+    "properties": {
+      "patterns": [
+        {
+          "match": "([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\.([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s*(=)",
+          "captures": {
+            "1": { "name": "variable.other.object" },
+            "2": { "name": "variable.other.object.property" },
+            "3": { "name": "keyword.operator.assignment" }
+          }
+        },
+        {
+          "match": "([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\.([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s*(?=\\()",
+          "captures": {
+            "1": { "name": "variable.other.object" },
+            "2": { "name": "entity.name.function.method" }
+          }
+        },
+        {
+          "match": "([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\.([A-Za-z_\\u0600-\\u06FF][\\w\\u0600-\\u06FF]*)\\s*(=>)",
+          "captures": {
+            "1": { "name": "variable.other.object" },
+            "2": { "name": "variable.other.object.property" },
+            "3": { "name": "keyword.operator.arrow" }
+          }
+        }
+      ]
+    }
+  }
+}

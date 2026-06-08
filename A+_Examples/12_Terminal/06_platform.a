@@ -1,0 +1,8 @@
+# Platform Demo - معرفة نظام التشغيل
+print("=== Platform Demo ===")
+let os = platform()
+print("نظام التشغيل: " + os)
+if os == "windows" { print("أنت على ويندوز") }
+if os == "linux" { print("أنت على لينكس") }
+if os == "macos" { print("أنت على ماك") }
+print("انتهى")

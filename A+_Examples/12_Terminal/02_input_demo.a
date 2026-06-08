@@ -1,0 +1,7 @@
+# Input Demo - الإدخال من المستخدم
+print("=== Input Demo ===")
+let name = input("ادخل اسمك: ")
+print("مرحباً " + name)
+let ageStr = input("كم عمرك؟ ")
+let age = ageStr + 0
+print("بعد 10 سنوات ستصبح " + (age + 10))

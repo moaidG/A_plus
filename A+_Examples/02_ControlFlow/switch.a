@@ -1,0 +1,28 @@
+# Switch/Case in A+
+let day = 3
+
+switch (day) {
+    case 1:
+        print("Sunday")
+        break
+    case 2:
+        print("Monday")
+        break
+    case 3:
+        print("Tuesday")
+        break
+    default:
+        print("Unknown")
+}
+
+# Switch with Arabic keywords
+اختيار (day) {
+    حالة 1:
+        اطبع("الأحد")
+        توقف
+    حالة 2:
+        اطبع("الإثنين")
+        توقف
+    افتراضي:
+        اطبع("يوم آخر")
+}

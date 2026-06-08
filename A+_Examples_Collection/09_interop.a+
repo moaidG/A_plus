@@ -1,0 +1,27 @@
+# ============================================================
+# 09: Extern & .NET Interop
+# ============================================================
+# استدعاء الدوال الخارجية وربط .NET
+
+# Call .NET static methods
+# Syntax: dotnet("Namespace.Type", "Method", args...)
+
+let sqrtVal = dotnet("System.Math", "Sqrt", 16)
+print("sqrt(16) = " + sqrtVal)
+
+let absVal = dotnet("System.Math", "Abs", -42)
+print("abs(-42) = " + absVal)
+
+let powVal = dotnet("System.Math", "Pow", 2, 10)
+print("2^10 = " + powVal)
+
+let maxVal = dotnet("System.Math", "Max", 100, 200)
+print("max(100, 200) = " + maxVal)
+
+# Extern native DLL (Windows)
+# extern func MessageBox(hwnd, text, caption, type) from "user32.dll"
+# MessageBox(0, "Hello from A+!", "A+ Language", 0)
+
+# Multiple args with dotnet
+let floorVal = dotnet("System.Math", "Floor", 3.9)
+print("floor(3.9) = " + floorVal)

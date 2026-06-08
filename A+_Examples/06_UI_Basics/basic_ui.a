@@ -1,0 +1,34 @@
+# Basic UI Elements in A+
+
+# Create a panel
+a+ new stackpanel panel
+panel.width = 400
+panel.height = 300
+
+# Add a label
+a+ new textblock label
+label.text = "Welcome to A+ UI!"
+label.fontsize = 15
+label.foreground = "Blue"
+panel.add(label)
+
+# Add a button
+a+ new button btn
+btn.content = "Click Me"
+btn.width = 150
+btn.height = 40
+btn.Click=d()
+panel.add(btn)
+
+# Add a textbox
+a+ new textbox inputy
+inputy.text = "Enter text..."
+inputy.width = 300
+panel.add(inputy)
+func d(){
+    let b=inputy.text
+    label.Text=b
+
+    }
+# Show the window
+show()

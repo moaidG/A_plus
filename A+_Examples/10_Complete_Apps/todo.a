@@ -1,0 +1,51 @@
+# Todo List App in A+
+
+class Task {
+    let title
+    let completed = false
+
+    func complete() {
+        self.completed = true
+    }
+
+    func showStatus() {
+        if (self.completed) {
+            return "[X] " + title
+        } else {
+            return "[ ] " + title
+        }
+    }
+}
+
+class TodoList {
+    let tasks = []
+
+    func add(title) {
+        let t = new Task()
+        t.title = title
+        self.tasks.push(t)
+        print("Added: " + title)
+    }
+
+    func completeAt(index) {
+        let item = self.tasks.get(index)
+        item.complete()
+        print("Completed: " + item.title)
+    }
+
+    func showAll() {
+        print("=== Todo List ===")
+        for (i in self.tasks) {
+            print(i.showStatus())
+        }
+        print("================")
+    }
+}
+
+let list = new TodoList()
+list.add("Learn A+")
+list.add("Build an app")
+list.add("Write tests")
+list.showAll()
+list.completeAt(0)
+list.showAll()

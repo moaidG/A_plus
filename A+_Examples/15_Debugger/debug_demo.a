@@ -1,0 +1,15 @@
+// عرض debugger و trace
+
+func calculate(a, b) {
+    trace("calculate: a = " + a + ", b = " + b)
+    let sum = a + b
+      // يتوقف هنا ويعرض المتغيرات المحلية
+    return sum * 2
+}
+debugger
+let x = 10
+let y = 20
+trace("قبل الاستدعاء")
+let result = calculate(x, y)
+print("النتيجة: " + result)
+trace("تم بنجاح")

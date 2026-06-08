@@ -1,0 +1,47 @@
+# A+ console library
+# Usage: include "lib_console.a"
+
+func printLine(msg) {
+    print(msg)
+}
+
+func printList(items) {
+    for (item in items) {
+        print(item)
+    }
+}
+
+func printRepeat(msg, times) {
+    let i = 0
+    while (i < times) {
+        print(msg)
+        i = i + 1
+    }
+}
+
+func readNumber(prompt) {
+    let val = input(prompt)
+    let num = dotnet("System.Convert", "ToDouble", val)
+    return num
+}
+
+func confirm(prompt) {
+    let answer = input(prompt + " (y/n): ")
+    if (answer == "y" or answer == "Y" or answer == "yes") {
+        return 1
+    }
+    return 0
+}
+
+func wait(seconds) {
+    let ms = seconds * 1000
+    dotnet("System.Threading.Thread", "Sleep", ms)
+}
+
+func count(items) {
+    let n = 0
+    for (x in items) {
+        n = n + 1
+    }
+    return n
+}

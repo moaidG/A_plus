@@ -1,0 +1,48 @@
+# Classes and Access Modifiers in A+
+
+class Shape {
+    func area() {
+        return 0
+    }
+}
+
+interface Drawable {
+    func draw()
+}
+
+class Circle / Shape {
+    let radius
+
+    func area() {
+        return 3.14 * radius * radius
+    }
+}
+
+let c = new Circle()
+c.radius = 5
+print("Circle area: " + c.area())
+
+# Access modifiers
+class Example {
+    public let name
+    private let secret
+    static let version = "1.0"
+}
+
+# Self / this usage
+class Counter {
+    let value = 0
+
+    func increment() {
+        self.value = self.value + 1
+    }
+
+    func show() {
+        print("Count: " + this.value)
+    }
+}
+
+let cnt = new Counter()
+cnt.increment()
+cnt.increment()
+cnt.show()

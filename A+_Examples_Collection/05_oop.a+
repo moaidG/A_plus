@@ -1,0 +1,12 @@
+# 05: OOP - Inheritance & Interfaces
+class Animal { let name; func speak() { print("...") } }
+class Dog / Animal { func speak() { print(self.name + " says: Woof!") } }
+class Cat / Animal { func speak() { print(self.name + " says: Meow!") } }
+let d = new Dog(); d.name = "Rex"; d.speak()
+let cat = new Cat(); cat.name = "Luna"; cat.speak()
+interface Drawable { func draw() }
+class Circle / Drawable { let radius = 1; func draw() { print("Drawing circle r=" + self.radius) } }
+let cir = new Circle(); cir.draw()
+class BankAccount { public let owner; private let balance = 0; func deposit(amount) { if (amount > 0) { self.balance = self.balance + amount } }; func getBalance() { return self.balance } }
+let acc = new BankAccount(); acc.owner = "Alice"; acc.deposit(100)
+print(acc.owner + " balance: " + acc.getBalance())

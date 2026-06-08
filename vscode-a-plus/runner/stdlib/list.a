@@ -1,0 +1,39 @@
+export func first(list) { if (list.len > 0) { return list[0] } return nil }
+export func last(list) { let n = list.len; if (n > 0) { return list[n - 1] } return nil }
+export func take(list, n) {
+    let r = []
+    let i = 0
+    while (i < n and i < list.len) { r.add(list[i]); i = i + 1 }
+    return r
+}
+export func skip(list, n) {
+    let r = []
+    let i = n
+    while (i < list.len) { r.add(list[i]); i = i + 1 }
+    return r
+}
+export func range(start, end) {
+    let r = []
+    let i = start
+    while (i <= end) { r.add(i); i = i + 1 }
+    return r
+}
+export func flatten(list) {
+    let r = []
+    for (item in list) {
+        if (item.len) { for (sub in item) { r.add(sub) } }
+        else { r.add(item) }
+    }
+    return r
+}
+export func chunk(list, size) {
+    let r = []
+    let i = 0
+    while (i < list.len) {
+        let chunk = []
+        let j = 0
+        while (j < size and i < list.len) { chunk.add(list[i]); i = i + 1; j = j + 1 }
+        r.add(chunk)
+    }
+    return r
+}

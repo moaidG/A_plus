@@ -1,0 +1,23 @@
+# Calculator in A+
+
+class Calculator {
+    func add(a, b) { return a + b }
+    func sub(a, b) { return a - b }
+    func mul(a, b) { return a * b }
+    func div(a, b) {
+        if (b == 0) {
+            return "Cannot divide by zero"
+        }
+        return a / b
+    }
+}
+
+let calc = new Calculator()
+let x = 10
+let y = 5
+
+print(x + " + " + y + " = " + calc.add(x, y))
+print(x + " - " + y + " = " + calc.sub(x, y))
+print(x + " * " + y + " = " + calc.mul(x, y))
+print(x + " / " + y + " = " + calc.div(x, y))
+print("10 / 0 = " + calc.div(10, 0))

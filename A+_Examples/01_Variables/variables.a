@@ -1,0 +1,15 @@
+# Variables in A+
+let name = "A+ Language"
+let version = 1.0
+let count = 0
+let isReady = true
+let items = [1, 2, 3, 4, 5]
+
+print("Name: " + name)
+print("Version: " + version)
+print("Count: " + count)
+print("Ready: " + isReady)
+
+# Reassignment
+count = 42
+print("New count: " + count)

@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "math",
+    "Version": "1.0.0",
+    "Description": "Advanced math: abs, sqrt, sin, cos, tan, floor, ceil, round, max, min, clamp, lerp, pi",
+    "Main": "math.a",
+    "Author": "A+"
+  },
+  {
+    "Name": "string",
+    "Version": "1.0.0",
+    "Description": "String utilities: split, join, reverse, trim, startsWith, endsWith, count, repeat, pad",
+    "Main": "string.a",
+    "Author": "A+"
+  },
+  {
+    "Name": "list",
+    "Version": "1.0.0",
+    "Description": "List operations: first, last, take, skip, range, flatten, chunk",
+    "Main": "list.a",
+    "Author": "A+"
+  },
+  {
+    "Name": "datetime",
+    "Version": "1.0.0",
+    "Description": "Date/time: now, addDays, addHours, addMinutes",
+    "Main": "datetime.a",
+    "Author": "A+"
+  },
+  {
+    "Name": "lib_console",
+    "Version": "1.0.0",
+    "Description": "Console utilities: printLine, readNumber, confirm, wait",
+    "Main": "lib_console.a",
+    "Author": "A+"
+  },
+  {
+    "Name": "ui_library",
+    "Version": "1.0.0",
+    "Description": "UI helpers: createWindow, createButton, createImage",
+    "Main": "ui_library.a",
+    "Author": "A+"
+  }
+]

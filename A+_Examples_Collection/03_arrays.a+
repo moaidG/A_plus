@@ -1,0 +1,15 @@
+# 03: Arrays & Lists
+let arr = [10, 20, 30, 40, 50]
+print("First: " + arr.get(0) + " Third: " + arr.get(2))
+print("Length: " + arr.len())
+arr.push(60)
+print("After push: " + arr)
+let mixed = [1, "hello", 3.14, true]
+print("Mixed: " + mixed)
+let matrix = [[1, 2], [3, 4]]
+print("Matrix[0][1]: " + matrix.get(0).get(1))
+let sum = 0
+for (val in arr) { sum = sum + val }
+print("Sum: " + sum)
+func sum_array(items) { let total = 0 for (v in items) { total = total + v } return total }
+print("sum_array([1,2,3,4,5]) = " + sum_array([1, 2, 3, 4, 5]))

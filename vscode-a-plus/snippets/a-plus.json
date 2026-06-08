@@ -1,0 +1,337 @@
+{
+  "func": {
+    "prefix": ["func", "function", "دالة"],
+    "body": "func ${1:name}($2) {\n    $3\n}",
+    "description": "Define a function"
+  },
+  "let": {
+    "prefix": ["let", "متغير", "م"],
+    "body": "let ${1:name} = ${2:value}",
+    "description": "Declare a variable"
+  },
+  "print": {
+    "prefix": ["print", "اطبع", "ط"],
+    "body": "print(${1:value})",
+    "description": "Print a value"
+  },
+  "if": {
+    "prefix": ["if", "إذا", "لو"],
+    "body": "if (${1:condition}) {\n    $2\n}",
+    "description": "If statement"
+  },
+  "ifelse": {
+    "prefix": ["ifelse", "وإلا"],
+    "body": "if (${1:condition}) {\n    $2\n} else {\n    $3\n}",
+    "description": "If-else statement"
+  },
+  "while": {
+    "prefix": ["while", "طالما", "ت"],
+    "body": "while (${1:condition}) {\n    $2\n}",
+    "description": "While loop"
+  },
+  "for": {
+    "prefix": ["for", "لكل"],
+    "body": "for (${1:i} = ${2:0}; ${1:i} < ${3:10}; ${1:i} = ${1:i} + 1) {\n    $4\n}",
+    "description": "For loop"
+  },
+  "forin": {
+    "prefix": ["forin", "في"],
+    "body": "for (${1:item} in ${2:items}) {\n    $3\n}",
+    "description": "For-in loop"
+  },
+  "class": {
+    "prefix": ["class", "صنف"],
+    "body": "class ${1:Name} {\n    let ${2:field}\n    func ${3:method}() {\n        $4\n    }\n}",
+    "description": "Define a class"
+  },
+  "class_inherit": {
+    "prefix": ["class-extends", "inherit", "وراثة"],
+    "body": "class ${1:Child} / ${2:Parent} {\n    func ${3:method}() {\n        $4\n    }\n}",
+    "description": "Define a class with inheritance"
+  },
+  "interface": {
+    "prefix": ["interface", "واجهة"],
+    "body": "interface ${1:Name} {\n    func ${2:method}()\n}",
+    "description": "Define an interface"
+  },
+  "abstract_class": {
+    "prefix": ["abstract", "مجرد"],
+    "body": "abstract class ${1:Name} {\n    abstract func ${2:method}()\n}",
+    "description": "Define an abstract class"
+  },
+  "include": {
+    "prefix": ["include", "ضم", "استدعاء"],
+    "body": "include \"${1:file}\"",
+    "description": "Include a file"
+  },
+  "extern": {
+    "prefix": ["extern", "خارجي"],
+    "body": "extern func ${1:name}(${2:params}) from \"${3:native.dll}\"",
+    "description": "Declare a native function"
+  },
+  "dotnet": {
+    "prefix": ["dotnet", "نت"],
+    "body": "dotnet(\"${1:System.Math}\", \"${2:Sqrt}\", ${3:16})",
+    "description": "Call a static .NET member"
+  },
+  "xml_ui": {
+    "prefix": ["xml", "xaml", "واجهة-xml"],
+    "body": "<StackPanel>\n  <TextBlock Text=\"${1:A+}\" />\n  <Button Content=\"${2:Run}\" />\n</StackPanel>\nshow()",
+    "description": "Create XML-style UI"
+  },
+  "arabic_xml_ui": {
+    "prefix": ["واجهة", "عربي-xml"],
+    "body": "<مكدسة>\n  <نص النص=\"${1:مرحبا}\" />\n  <زر المحتوى=\"${2:تشغيل}\" />\n</مكدسة>\nاعرض()",
+    "description": "Create Arabic XML-style UI"
+  },
+  "media": {
+    "prefix": ["media", "وسائط"],
+    "body": "a+ new MediaElement ${1:media}\n${1:media}.Source = \"${2:media.mp4}\"",
+    "description": "Create a media element"
+  },
+  "viewport3d": {
+    "prefix": ["viewport3d", "منظور3d"],
+    "body": "a+ new Viewport3D ${1:scene}",
+    "description": "Create a 3D viewport"
+  },
+  "watch": {
+    "prefix": ["watch", "reload"],
+    "body": "# Use command: A+: Watch (Hot Reload)",
+    "description": "Reminder for hot reload command"
+  },
+  "a-new": {
+    "prefix": ["a+ new"],
+    "body": "a+ new ${1:Button} ${2:btn}${3: =<${1} ${4:Content}=\"${5:Click}\" />}",
+    "description": "Create a new UI element"
+  },
+  "show": {
+    "prefix": ["show", "اعرض"],
+    "body": "show(${1:update}, ${2:wis})\n$3<---\n",
+    "description": "Show UI and watch variable"
+  },
+  "return": {
+    "prefix": ["return", "ارجع"],
+    "body": "return ${1:value}",
+    "description": "Return a value"
+  },
+  "break": {
+    "prefix": ["break", "قف"],
+    "body": "break",
+    "description": "Break out of loop"
+  },
+  "continue": {
+    "prefix": ["continue", "تابع"],
+    "body": "continue",
+    "description": "Continue to next iteration"
+  },
+  "event_click": {
+    "prefix": ["onclick", "event-click", "نقر"],
+    "body": "${1:btn}.Click = ${2:onClick}()",
+    "description": "Bind Click event handler"
+  },
+  "event_loaded": {
+    "prefix": ["onloaded", "event-loaded", "تحميل"],
+    "body": "${1:element}.Loaded = ${2:onLoad}()",
+    "description": "Bind Loaded event handler"
+  },
+  "event_mouseenter": {
+    "prefix": ["onmouseenter", "event-mouseenter", "دخول-فأرة"],
+    "body": "${1:element}.MouseEnter = ${2:onHover}()",
+    "description": "Bind MouseEnter event handler"
+  },
+  "event_mouseleave": {
+    "prefix": ["onmouseleave", "event-mouseleave", "خروج-فأرة"],
+    "body": "${1:element}.MouseLeave = ${2:onLeave}()",
+    "description": "Bind MouseLeave event handler"
+  },
+  "event_textchanged": {
+    "prefix": ["ontextchange", "event-textchanged", "تغير-نص"],
+    "body": "${1:input}.TextChanged = ${2:onTextChange}()",
+    "description": "Bind TextChanged event handler"
+  },
+  "event_keydown": {
+    "prefix": ["onkeydown", "event-keydown", "ضغط-مفتاح"],
+    "body": "${1:element}.KeyDown = ${2:onKeyDown}()",
+    "description": "Bind KeyDown event handler"
+  },
+  "a_new_image": {
+    "prefix": ["a+ new image", "صورة"],
+    "body": "a+ new image ${1:img}\n${1:img}.width = ${2:100}\n${1:img}.height = ${3:100}",
+    "description": "Create a new Image element"
+  },
+  "a_new_media": {
+    "prefix": ["a+ new media", "وسائط-جديد"],
+    "body": "a+ new mediaelement ${1:player}\n${1:player}.source = \"${2:video.mp4}\"",
+    "description": "Create a new MediaElement"
+  },
+  "a_new_viewport3d": {
+    "prefix": ["a+ new viewport3d", "منظور-جديد"],
+    "body": "viewport3d new ${1:vp}\n${1:vp}.cam = new Camera(${2:0}, ${3:0}, ${4:5})\n${1:vp}.ligt = new Light(${5:1}, ${6:-1}, ${7:1})\n${1:vp}.objet = new Object(${8:0}, ${9:0}, \"${10:}\")",
+    "description": "Create a 3D viewport with camera, light, and object"
+  },
+  "input": {
+    "prefix": ["input", "اقرأ", "إدخال"],
+    "body": "input(\"${1:prompt}: \")",
+    "description": "Read input from user / اقرأ من المستخدم"
+  },
+  "consoleClear": {
+    "prefix": ["consoleClear", "مسحشاشة"],
+    "body": "consoleClear()",
+    "description": "Clear console screen / مسح الشاشة"
+  },
+  "consoleSetCursor": {
+    "prefix": ["consoleSetCursor", "حددموقعمؤشر"],
+    "body": "consoleSetCursor(${1:x}, ${2:y})",
+    "description": "Set cursor position / حدد موقع المؤشر"
+  },
+  "consoleColor": {
+    "prefix": ["consoleColor", "لوننص"],
+    "body": "consoleColor(\"${1|red,green,blue,yellow,cyan,magenta,white|}\")",
+    "description": "Set console text color (16 colors) / لون النص"
+  },
+  "platform": {
+    "prefix": ["platform", "منصة"],
+    "body": "platform()",
+    "description": "Detect operating system / معرفة نظام التشغيل"
+  },
+  "trace": {
+    "prefix": ["trace", "تتبع"],
+    "body": "trace(\"${1:message}\")",
+    "description": "Log trace message / تسجيل تتبع"
+  },
+  "debugger": {
+    "prefix": ["debugger", "مصحح"],
+    "body": "debugger",
+    "description": "Pause for debugging / إيقاف للتصحيح"
+  },
+  "export": {
+    "prefix": ["export", "تصدير"],
+    "body": "export let ${1:name} = ${2:value}",
+    "description": "Export a variable, function, or class / تصدير متغير أو دالة أو صنف"
+  },
+  "export_func": {
+    "prefix": ["export-func", "تصدير-دالة"],
+    "body": "export func ${1:name}($2) {\n    $3\n}",
+    "description": "Export a function / تصدير دالة"
+  },
+  "export_class": {
+    "prefix": ["export-class", "تصدير-صنف"],
+    "body": "export class ${1:Name} {\n    let ${2:field}\n    func ${3:method}() {\n        $4\n    }\n}",
+    "description": "Export a class / تصدير صنف"
+  },
+  "import": {
+    "prefix": ["import", "استيراد"],
+    "body": "import { ${1:name1}, ${2:name2} } from \"${3:file}\"",
+    "description": "Import specific names from a module / استيراد أسماء محددة"
+  },
+  "import_as": {
+    "prefix": ["import-as", "استيراد-ك"],
+    "body": "import \"${1:module}\" as ${2:alias}",
+    "description": "Import a module as alias / استيراد وحدة كاسم مستعار"
+  },
+  "async_func": {
+    "prefix": ["async", "غيرمتزامن"],
+    "body": "async func ${1:name}($2) {\n    $3\n}",
+    "description": "Define an async function / تعريف دالة غير متزامنة"
+  },
+  "spawn": {
+    "prefix": ["spawn", "انشاءمهمة"],
+    "body": "spawn ${1:name}(${2:params}) {\n    $3\n}",
+    "description": "Spawn a background task / إنشاء مهمة خلفية"
+  },
+  "go": {
+    "prefix": ["go", "انطلق"],
+    "body": "go ${1:asyncFunc()}",
+    "description": "Fire-and-forget async call / استدعاء غير متزامن بدون انتظار"
+  },
+  "await": {
+    "prefix": ["await", "انتظر"],
+    "body": "await ${1:asyncFunc()}",
+    "description": "Await an async result / انتظار نتيجة غير متزامنة"
+  },
+  "pipe": {
+    "prefix": ["pipe", "أنبوب"],
+    "body": "${1:value} | ${2:func}($3)",
+    "description": "Pipe operator (left to right) / عامل الأنبوب"
+  },
+  "regex_test": {
+    "prefix": ["regex-test", "اختبار-نمط"],
+    "body": "${1:pattern}.test(\"${2:string}\")",
+    "description": "Test if regex matches / اختبار تطابق النمط"
+  },
+  "regex_match": {
+    "prefix": ["regex-match", "مطابقة-نمط"],
+    "body": "${1:pattern}.match(\"${2:string}\")",
+    "description": "Find regex matches / إيجاد تطابقات النمط"
+  },
+  "regex_replace": {
+    "prefix": ["regex-replace", "استبدال-نمط"],
+    "body": "${1:pattern}.replace(\"${2:string}\", \"${3:replacement}\")",
+    "description": "Replace regex matches / استبدال تطابقات النمط"
+  },
+  "module": {
+    "prefix": ["module", "وحدة"],
+    "body": "// module.a\n${1:export let name = \"${2:value}\"}\n\n// main.a\nimport { ${1:name} } from \"module\"",
+    "description": "Module with export/import / وحدة برمجية"
+  },
+  "axml_stackpanel": {
+    "prefix": ["StackPanel", "مكدسة"],
+    "body": "<StackPanel${1: Width=\"${2:400}\"${3: Height=\"${4:300}\"}}>\n    $5\n</StackPanel>",
+    "description": "AXML StackPanel container / حاوية مكدسة"
+  },
+  "axml_button": {
+    "prefix": ["Button", "زر"],
+    "body": "<Button${1: Name=\"${2:btn}\"} Content=\"${3:نص}\"${4: Width=\"${5:100}\"}${6: Click=\"{${7:onClick}}\"} />",
+    "description": "AXML Button / زر"
+  },
+  "axml_textblock": {
+    "prefix": ["TextBlock", "نص"],
+    "body": "<TextBlock${1: Name=\"${2:lbl}\"} Text=\"${3:نص}\"${4: FontSize=\"${5:16}\"}${6: Color=\"${7:#e0e0ff}\"} />",
+    "description": "AXML TextBlock / نص"
+  },
+  "axml_textbox": {
+    "prefix": ["TextBox", "حقلنص"],
+    "body": "<TextBox${1: Name=\"${2:input}\"}${3: Width=\"${4:200}\"}${5: Placeholder=\"${6:...}\"} />",
+    "description": "AXML TextBox / حقل إدخال نص"
+  },
+  "axml_listview": {
+    "prefix": ["ListView", "قائمة"],
+    "body": "<ListView${1: Name=\"${2:list}\"}${3: Width=\"${4:100%}\"}${5: Height=\"${6:200}\"}>\n</ListView>",
+    "description": "AXML ListView / قائمة عرض"
+  },
+  "axml_border": {
+    "prefix": ["Border", "حدود"],
+    "body": "<Border${1: Background=\"${2:#1a1a3e}\"}${3: CornerRadius=\"${4:8}\"} Padding=\"${5:10}\">\n    $6\n</Border>",
+    "description": "AXML Border container / حاوية بحدود"
+  },
+  "axml_form_template": {
+    "prefix": ["axml-form", "نموذج"],
+    "body": "<StackPanel Width=\"${1:400}\" Background=\"#0f0f23\">\n    <TextBlock Text=\"${2:نموذج إدخال}\" FontSize=\"20\" Color=\"#e0e0ff\" HorizontalAlignment=\"Center\" Margin=\"0,15\" />\n    <TextBox Name=\"${3:field1}\" Width=\"300\" Height=\"35\" Placeholder=\"${4:حقل 1}\" Margin=\"0,5\" HorizontalAlignment=\"Center\" />\n    <TextBox Name=\"${5:field2}\" Width=\"300\" Height=\"35\" Placeholder=\"${6:حقل 2}\" Margin=\"0,5\" HorizontalAlignment=\"Center\" />\n    <Button Content=\"${7:إرسال}\" Width=\"120\" Height=\"40\" Background=\"#7c3aed\" Foreground=\"white\" Click=\"{${8:onSubmit}}\" Margin=\"0,10\" HorizontalAlignment=\"Center\" />\n    <TextBlock Name=\"${9:resultText}\" FontSize=\"14\" Color=\"#10b981\" HorizontalAlignment=\"Center\" />\n</StackPanel>\n\nfunc ${8:onSubmit}(sender, args) {\n    // ${10:حدث الضغط}\n}\n\nshow()",
+    "description": "Complete AXML form template / قالب نموذج كامل"
+  },
+  "axml_include_component": {
+    "prefix": ["include-axml", "استدعاء-واجهة"],
+    "body": "include \"${1:Form}.axml\"",
+    "description": "Include an AXML component file / استدعاء مكون AXML"
+  },
+  "a_new_component": {
+    "prefix": ["a+ component", "مكون جديد"],
+    "body": "a+ xml ${1:comp} = <${2:StackPanel}${3: Width=\"${4:400}\"}>\n\nshow(${1:comp})",
+    "description": "Create a new A+ UI component / إنشاء مكون واجهة جديد"
+  },
+  "axml_event_click": {
+    "prefix": ["axml-click", "حدث-ضغط"],
+    "body": "Click=\"{${1:handlerName}}\"\n\nfunc ${1:handlerName}(sender, args) {\n    $2\n}",
+    "description": "AXML Click event with handler / حدث الضغط مع المعالج"
+  },
+  "crud_pattern": {
+    "prefix": ["crud", "إدارة"],
+    "body": "let items = []\n\nfunc addItem(sender, args) {\n    items.add({ name: \"${1:name}\", value: \"${2:value}\" })\n    ${3:listView}.items = items\n}\n\nfunc deleteItem(sender, args) {\n    let idx = ${3:listView}.selectedIndex\n    if idx >= 0 && idx < items.len {\n        items.removeAt(idx)\n        ${3:listView}.items = items\n    }\n}",
+    "description": "CRUD pattern with ListView / نمط إدارة البيانات"
+  },
+  "library_skeleton": {
+    "prefix": ["library-skeleton", "مكتبة-جديدة"],
+    "body": "# ${1:LibraryName}.a\n# مكتبة A+ قابلة للاستدعاء\n\ninclude \"${2:math}\"\n\nexport func ${3:myFunc}($4) {\n    $5\n}\n\nexport let VERSION = \"${6:1.0.0}\"",
+    "description": "Library skeleton template / هيكل مكتبة"
+  }
+}

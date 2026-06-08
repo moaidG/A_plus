@@ -1,0 +1,18 @@
+// Regular expressions
+
+// .test() — اختبار التطابق
+let pattern = /hello/
+print("test1: " + pattern.test("hello world"))  // true
+print("test2: " + pattern.test("goodbye"))       // false
+
+// .match() — إيجاد التطابقات
+let digits = /\d+/
+let matches = digits.match("abc123def456")
+for (m in matches) {
+    print("match: " + m)  // 123, 456
+}
+
+// .replace() — استبدال
+let replacePat = /world/
+let replaced = replacePat.replace("hello world", "A+")
+print("replaced: " + replaced)  // hello A+

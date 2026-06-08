@@ -1,0 +1,70 @@
+# A+ UI library - helper functions for WPF UI
+# Usage: include "ui_library.a"
+
+func createWindow(title, width, height) {
+    a+ new window __win
+    __win.title = title
+    __win.width = width
+    __win.height = height
+    return __win
+}
+
+func createStackPanel() {
+    a+ new stackpanel __sp
+    return __sp
+}
+
+func createGrid() {
+    a+ new grid __g
+    return __g
+}
+
+func createButton(text) {
+    a+ new button __btn
+    __btn.content = text
+    return __btn
+}
+
+func createLabel(text) {
+    a+ new textblock __lbl
+    __lbl.text = text
+    return __lbl
+}
+
+func createTextBox(text) {
+    a+ new textbox __tb
+    __tb.text = text
+    return __tb
+}
+
+func createImage(src) {
+    a+ new image __img
+    __img.source = src
+    return __img
+}
+
+func createBorder(child, bg) {
+    a+ new border __brd
+    __brd.background = bg
+    __brd.child = child
+    return __brd
+}
+
+func createScrollViewer(child) {
+    a+ new scrollviewer __sv
+    __sv.content = child
+    return __sv
+}
+
+func setMargin(elem, left, top, right, bottom) {
+    elem.margin = left + "," + top + "," + right + "," + bottom
+}
+
+func setPadding(elem, left, top, right, bottom) {
+    elem.padding = left + "," + top + "," + right + "," + bottom
+}
+
+func setFont(elem, size, color) {
+    elem.fontsize = size
+    elem.foreground = color
+}

@@ -1,0 +1,12 @@
+# Console Cursor Demo - تحريك المؤشر
+consoleClear()
+let i = 0
+while i < 10 {
+    consoleSetCursor(i * 2, i)
+    consoleColor("green")
+    print("نقطة " + i)
+    i = i + 1
+}
+consoleSetCursor(0, 12)
+consoleColor("white")
+print("تم!")

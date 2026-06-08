@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net10.0-windows;net10.0</TargetFrameworks>
+    <UseWPF Condition="'$(TargetFramework)' == 'net10.0-windows'">true</UseWPF>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DefaultItemExcludes>$(DefaultItemExcludes);bin\**;obj\**;build\**;dist\**;bin-codex\**;obj-codex\**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net10.0-windows'">
+    <Compile Remove="Language\UI\WpfRuntime.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="MobileTemplate\**\*" />
+    <Compile Remove="bin\**\*" />
+    <Compile Remove="obj\**\*" />
+    <Compile Remove="build\**\*" />
+    <Compile Remove="dist\**\*" />
+    <Compile Remove="bin-codex\**\*" />
+    <Compile Remove="obj-codex\**\*" />
+    <Page Remove="MobileTemplate\**\*.xaml" />
+    <Content Include="MobileTemplate\**\*" Exclude="MobileTemplate\bin\**;MobileTemplate\obj\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="stdlib\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Language\UI\aplus_web_runtime.js" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

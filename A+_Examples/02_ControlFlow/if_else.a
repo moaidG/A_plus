@@ -1,0 +1,21 @@
+# If/Else in A+
+let x = 10
+
+if (x > 0) {
+    print("Positive")
+}
+
+if (x > 10) {
+    print("Large")
+} else {
+    print("Small or equal")
+}
+
+# Else if pattern
+if (x > 10) {
+    print("Large")
+} else if (x > 5) {
+    print("Medium")
+} else {
+    print("Small")
+}

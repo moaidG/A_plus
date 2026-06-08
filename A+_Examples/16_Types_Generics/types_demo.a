@@ -1,0 +1,23 @@
+// Type annotations
+let name: string = "A+"
+let count: number = 100
+let flag: bool = true
+
+print("name: " + name)
+print("count: " + count)
+print("flag: " + flag)
+
+// Function with types
+func add(a: number, b: number): number {
+    return a + b
+}
+
+print("add(3, 4) = " + add(3, 4))
+
+// Generic function
+func first[T](list) {
+    return list[0]
+}
+
+let arr = [10, 20, 30]
+print("first(arr) = " + first(arr))

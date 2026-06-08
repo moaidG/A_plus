@@ -1,0 +1,33 @@
+# Classes and OOP in A+
+
+class Animal {
+    let name
+    let age
+
+    func speak() {
+        print(name + " makes a sound")
+    }
+
+    func info() {
+        print("Name: " + name + ", Age: " + age)
+    }
+}
+
+# Inheritance (using /)
+class Dog / Animal {
+    func speak() {
+        print(name + " barks")
+    }
+}
+
+# Create instances
+let a = new Animal()
+a.name = "Generic"
+a.age = 5
+a.speak()
+
+let d = new Dog()
+d.name = "Rex"
+d.age = 3
+d.speak()
+d.info()

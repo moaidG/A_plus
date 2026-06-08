@@ -1,0 +1,9 @@
+// استيراد أسماء محددة
+import { PI, double } from "math"
+
+print("PI = " + PI)
+print("double(5) = " + double(5))
+
+// استيراد كامل كاسم مستعار
+import "math" as m
+print("m.PI = " + m.PI)

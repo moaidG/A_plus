@@ -1,0 +1,74 @@
+# ============================================================
+# 10: Complete App - To-Do List
+# ============================================================
+# تطبيق كامل - قائمة المهام
+
+# Task class
+class Task {
+    let title
+    let completed = false
+
+    func Task(t) {
+        self.title = t
+        self.completed = false
+    }
+
+    func toggle() {
+        self.completed = not self.completed
+    }
+
+    func display() {
+        let status = " "
+        if (self.completed) { status = "✓" }
+        print("[" + status + "] " + self.title)
+    }
+}
+
+# To-Do List manager
+class TodoList {
+    let tasks = []
+
+    func add(title) {
+        let t = new Task()
+        t.Task(title)
+        self.tasks.push(t)
+    }
+
+    func toggle(index) {
+        if (index >= 0 and index < self.tasks.len()) {
+            self.tasks.get(index).toggle()
+        }
+    }
+
+    func show() {
+        print("=== To-Do List ===")
+        for (i = 0; i < self.tasks.len(); i = i + 1) {
+            let task = self.tasks.get(i)
+            let status = " "
+            if (task.completed) { status = "✓" }
+            print(i + ". [" + status + "] " + task.title)
+        }
+        print("=== " + self.tasks.len() + " tasks ===")
+    }
+
+    func remove(index) {
+        if (index >= 0 and index < self.tasks.len()) {
+            # Shift elements (simplified)
+            self.tasks.set(index, self.tasks.get(self.tasks.len() - 1))
+            self.tasks.pop()
+        }
+    }
+}
+
+# Usage
+let todo = new TodoList()
+todo.add("Learn A+ language")
+todo.add("Write examples")
+todo.add("Test the interpreter")
+todo.show()
+
+todo.toggle(0)
+print("After toggling task 0:")
+todo.show()
+
+print("All To-Do examples work!")

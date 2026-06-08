@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="A_Mobile.MainPage"
+             Title="A+ Mobile"
+             BackgroundColor="#1e1e2e">
+    <Grid RowDefinitions="*,Auto" Padding="10" RowSpacing="10">
+        <ScrollView x:Name="OutputScroll" Grid.Row="0" BackgroundColor="#2d2d44" CornerRadius="8">
+            <Label x:Name="OutputLabel" TextColor="#cdd6f4"
+                   FontFamily="monospace" FontSize="13"
+                   Padding="10" LineBreakMode="WordWrap" />
+        </ScrollView>
+        <Entry x:Name="InputEntry" Grid.Row="1"
+               Placeholder="أدخل الإدخال..."
+               IsVisible="false"
+               BackgroundColor="#45475a" TextColor="#cdd6f4"
+               PlaceholderColor="#6c7086" FontSize="14" />
+    </Grid>
+</ContentPage>

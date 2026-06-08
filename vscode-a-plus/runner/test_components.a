@@ -1,0 +1,30 @@
+func createCard(title, imgUrl) {
+    <StackPanel Width="200" Height="150" Background="White">
+        <TextBlock Text=title FontSize="18" Foreground="Black"/>
+        <Image Source=imgUrl Width="180" Height="100"/>
+    </StackPanel>
+}
+
+func createButton(label) {
+    <Button Content=label Width="120" Height="40"/>
+}
+
+a+ xml card1 = <createCard title="Hello A+" imgUrl="test.png"/>
+print("card1 OK")
+
+a+ xml card2 = <createCard title="Second Card" imgUrl="other.png"/>
+print("card2 OK")
+
+a+ xml btn1 = <createButton label="Click Me"/>
+print("btn1 OK")
+
+a+ new dev btn2 = { <Button Content="Inline Button" Width="150" Height="50"/> }
+print("btn2 OK")
+
+a+ new StackPanel root
+root.add(card1)
+root.add(card2)
+root.add(btn1)
+root.add(btn2)
+
+print("ALL_OK")

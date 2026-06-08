@@ -1,0 +1,7 @@
+# XAML-style UI in A+
+<StackPanel Width="400" Height="300">
+    <TextBlock Text="A+ XAML UI" FontSize="28" Foreground="#0066CC" />
+    <Button Content="OK" Width="100" Height="40" />
+    <TextBox Text="Type here..." Width="300" />
+</StackPanel>
+show()

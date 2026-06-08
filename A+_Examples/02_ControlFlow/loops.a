@@ -1,0 +1,30 @@
+# Loops in A+
+
+# While loop
+let i = 0
+while (i != 5) {
+    print("While: " + i)
+    i = i + 1
+}
+
+# For loop (C-style)
+for (let j = 0; j != 3; j = j + 1) {
+    print("For: " + j)
+}
+
+# For-in loop
+let items = [10, "OK", true,false]
+for (val in items) {
+    print("Item: " + val)
+}
+
+# Break and Continue
+for (let x = 0; x < 10; x = x + 1) {
+    if (x == 3) {
+        continue
+    }
+    if (x == 7) {
+        break
+    }
+    print(x)
+}

@@ -1,0 +1,13 @@
+# ============================================================
+# 01: Control Flow - Conditions & Loops
+# ============================================================
+let score = 85
+if (score >= 90) { print("Excellent") } else if (score >= 70) { print("Good") } else { print("Needs improvement") }
+let day = 3
+switch (day) { case 1: print("Mon"); break case 2: print("Tue"); break case 3: print("Wed"); break }
+let i = 0
+while (i < 5) { print("While: " + i) i = i + 1 }
+for (j = 0; j < 3; j = j + 1) { print("For: " + j) }
+let items = ["a", "b", "c"]
+for (item in items) { print("Item: " + item) }
+for (k = 0; k < 10; k = k + 1) { if (k == 3) { continue } if (k == 7) { break } print("k = " + k) }

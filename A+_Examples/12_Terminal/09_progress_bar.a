@@ -1,0 +1,26 @@
+# Progress Bar Demo - شريط تقدم نصي
+func showProgress(current, total) {
+    let pct = (current / total) * 100
+    let bars = pct / 5
+    let bar = ""
+    let i = 0
+    while i < bars { bar = bar + "█"; i = i + 1 }
+    while i < 20 { bar = bar + "░"; i = i + 1 }
+    consoleSetCursor(0, 0)
+    consoleColor("green")
+    print("[" + bar + "] " + pct + "%")
+}
+
+consoleClear()
+consoleColor("white")
+print("شريط التقدم:\n")
+
+let i = 0
+while i <= 100 {
+    showProgress(i, 100)
+    i = i + 1
+    sleep(30)
+}
+consoleColor("green")
+print("\nتم الانتهاء!")
+consoleColor("white")

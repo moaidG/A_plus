@@ -1,0 +1,11 @@
+# Console Color Demo - ألوان الطرفية
+print("=== Console Colors Demo ===")
+let colors = ["red", "green", "yellow", "blue", "magenta", "cyan", "white"]
+let i = 0
+while i < colors.len {
+    consoleColor(colors[i])
+    print("هذا اللون: " + colors[i])
+    i = i + 1
+}
+consoleColor("white")
+print("انتهى العرض")

@@ -1,0 +1,31 @@
+# Number Guessing Game - لعبة تخمين الأرقام
+let target = 42
+let guess = 0
+let attempts = 0
+
+consoleClear()
+consoleColor("cyan")
+print("===== لعبة تخمين الرقم =====")
+consoleColor("yellow")
+print("خمن رقماً بين 1 و 100")
+consoleColor("white")
+
+while guess != target {
+    let s = input("خمن: ")
+    guess = s + 0
+    attempts = attempts + 1
+
+    if guess < target {
+        consoleColor("red")
+        print("أقل من الرقم!")
+    } else if guess > target {
+        consoleColor("red")
+        print("أكبر من الرقم!")
+    } else {
+        consoleColor("green")
+        print("أحسنت! الرقم هو " + target)
+        consoleColor("yellow")
+        print("عدد المحاولات: " + attempts)
+    }
+    consoleColor("white")
+}

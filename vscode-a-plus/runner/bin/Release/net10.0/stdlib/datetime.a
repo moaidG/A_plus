@@ -1,0 +1,4 @@
+export func now() { return timestamp() }
+export func addDays(ts, n) { return ts + n * 86400000 }
+export func addHours(ts, n) { return ts + n * 3600000 }
+export func addMinutes(ts, n) { return ts + n * 60000 }

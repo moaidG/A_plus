@@ -1,0 +1,154 @@
+{
+  "name": "a-plus-language",
+  "displayName": "A+ Language",
+  "description": "A+ Language support - syntax highlighting & runner",
+  "version": "1.0.0",
+  "publisher": "a-plus",
+  "icon": "icon.svg",
+  "scripts": {
+    "check": "node -c src/extension.js && node -e \"JSON.parse(require('fs').readFileSync('package.json','utf8')); console.log('A+ extension metadata OK')\"",
+    "build:runner": "dotnet build runner/A_Plus_Console.csproj -f net10.0 -c Release",
+    "run:hello": "dotnet run -f net10.0 -c Release --project runner/A_Plus_Console.csproj -- ../A+_Examples/00_HelloWorld/hello_world.a",
+    "package:web": "dotnet run -f net10.0 -c Release --project runner/A_Plus_Console.csproj -- package ../A+_Examples/00_HelloWorld/hello_world.a hello_world -os web"
+  },
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Programming Languages"],
+  "activationEvents": [
+    "onLanguage:a-plus",
+    "onCommand:a-plus.run",
+    "onCommand:a-plus.watch",
+    "onCommand:a-plus.newProject",
+    "onCommand:a-plus.openTerminal",
+    "onCommand:a-plus.libraryManager",
+    "onCommand:a-plus.install",
+    "onCommand:a-plus.check",
+    "onCommand:a-plus.buildWithPicker",
+    "onCommand:a-plus.package",
+    "onCommand:a-plus.packageWeb",
+    "onCommand:a-plus.packageExe",
+    "onCommand:a-plus.packageLinux",
+    "onCommand:a-plus.packageMacos",
+    "onCommand:a-plus.packageApk",
+    "onCommand:a-plus.packageIos",
+    "onCommand:a-plus.packageAll",
+    "onCommand:a-plus.packageExtension",
+    "onCommand:a-plus.term.print",
+    "onCommand:a-plus.term.input",
+    "onCommand:a-plus.term.clear",
+    "onCommand:a-plus.term.color",
+    "onCommand:a-plus.term.cursor",
+    "onCommand:a-plus.term.platform",
+    "onCommand:a-plus.term.debug",
+    "onCommand:a-plus.term.game",
+    "onCommand:a-plus.term.progress"
+  ],
+  "scopeName": "source.a-plus",
+  "main": "./src/extension",
+  "contributes": {
+    "languages": [{
+      "id": "a-plus",
+      "aliases": ["A+", "a+"],
+      "extensions": [".a", ".axml", ".aplus", ".r.a",".a+",".A",".A+"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "icon.svg",
+        "dark": "icon-dark.svg"
+      }
+    }],
+    "grammars": [{
+      "language": "a-plus",
+      "scopeName": "source.a-plus",
+      "path": "./syntaxes/a-plus.tmLanguage.json"
+    }],
+    "snippets": [{
+      "language": "a-plus",
+      "path": "./snippets/a-plus.json"
+    }],
+
+    "commands": [
+      { "command": "a-plus.run", "title": "A+: Run File", "icon": "$(play)" },
+      { "command": "a-plus.watch", "title": "A+: Watch (Hot Reload)", "icon": "$(sync)" },
+      { "command": "a-plus.newProject", "title": "A+: Create New Project", "icon": "$(new-folder)" },
+      { "command": "a-plus.openTerminal", "title": "A+: Open Terminal Tools", "icon": "$(terminal)" },
+    { "command": "a-plus.libraryManager", "title": "A+: Library Manager", "icon": "$(package)" },
+    { "command": "a-plus.install", "title": "A+: Install Dependencies", "icon": "$(cloud-download)" },
+    { "command": "a-plus.check", "title": "A+: Check Environment", "icon": "$(check)" },
+    { "command": "a-plus.term.print", "title": "A+: Terminal - Print Demo" },
+    { "command": "a-plus.term.input", "title": "A+: Terminal - Input Demo" },
+    { "command": "a-plus.term.clear", "title": "A+: Terminal - Console Clear" },
+    { "command": "a-plus.term.color", "title": "A+: Terminal - Colors Demo" },
+    { "command": "a-plus.term.cursor", "title": "A+: Terminal - Cursor Demo" },
+    { "command": "a-plus.term.platform", "title": "A+: Terminal - Platform Demo" },
+    { "command": "a-plus.term.debug", "title": "A+: Terminal - Trace & Debugger" },
+    { "command": "a-plus.term.game", "title": "A+: Terminal - Number Guessing" },
+    { "command": "a-plus.term.progress", "title": "A+: Terminal - Progress Bar" },
+    { "command": "a-plus.buildWithPicker", "title": "A+: Build File...", "icon": "$(tools)" },
+    { "command": "a-plus.package", "title": "A+: Package Script", "icon": "$(package)" },
+    { "command": "a-plus.packageWeb", "title": "A+: Package for Web", "icon": "$(globe)" },
+    { "command": "a-plus.packageExe", "title": "A+: Package as EXE", "icon": "$(package)" },
+    { "command": "a-plus.packageLinux", "title": "A+: Package for Linux", "icon": "$(terminal)" },
+    { "command": "a-plus.packageMacos", "title": "A+: Package for macOS", "icon": "$(chevron-right)" },
+    { "command": "a-plus.packageApk", "title": "A+: Package for Android (APK)", "icon": "$(device-mobile)" },
+    { "command": "a-plus.packageIos", "title": "A+: Package for iOS", "icon": "$(device-mobile)" },
+    { "command": "a-plus.packageAll", "title": "A+: Package for All Platforms", "icon": "$(list-selection)" },
+    { "command": "a-plus.packageExtension", "title": "A+: Package VS Code Extension (.vsix)", "icon": "$(extensions)" }
+    ],
+    "keybindings": [
+      { "command": "a-plus.run", "key": "ctrl+shift+alt+r", "when": "editorLangId == a-plus" },
+      { "command": "a-plus.watch", "key": "ctrl+shift+alt+w", "when": "editorLangId == a-plus" },
+      { "command": "a-plus.newProject", "key": "ctrl+shift+alt+n", "when": "editorLangId == a-plus" },
+      { "command": "a-plus.buildWithPicker", "key": "ctrl+shift+alt+b", "when": "editorLangId == a-plus" },
+      { "command": "a-plus.package", "key": "ctrl+shift+alt+p", "when": "editorLangId == a-plus" },
+      { "command": "a-plus.packageWeb", "key": "ctrl+shift+alt+1", "when": "editorLangId == a-plus" },
+      { "command": "a-plus.packageExe", "key": "ctrl+shift+alt+2", "when": "editorLangId == a-plus" }
+    ],
+    "menus": {
+      "editor/title": [
+        { "command": "a-plus.buildWithPicker", "when": "editorLangId == a-plus", "group": "navigation@1" },
+        { "command": "a-plus.run", "when": "editorLangId == a-plus", "group": "navigation@2" },
+        { "command": "a-plus.package", "when": "editorLangId == a-plus", "group": "navigation@3" },
+        { "command": "a-plus.newProject", "when": "editorLangId == a-plus", "group": "navigation@4" },
+        { "command": "a-plus.libraryManager", "when": "editorLangId == a-plus", "group": "navigation@5" }
+      ],
+      "explorer/context": [
+        { "command": "a-plus.buildWithPicker", "when": "resourceLangId == a-plus", "group": "aplus@0" },
+        { "command": "a-plus.run", "when": "resourceLangId == a-plus", "group": "aplus@1" },
+        { "command": "a-plus.packageWeb", "when": "resourceLangId == a-plus", "group": "aplus@2" },
+        { "command": "a-plus.packageExe", "when": "resourceLangId == a-plus", "group": "aplus@3" },
+        { "command": "a-plus.packageLinux", "when": "resourceLangId == a-plus", "group": "aplus@4" },
+        { "command": "a-plus.packageMacos", "when": "resourceLangId == a-plus", "group": "aplus@5" },
+        { "command": "a-plus.packageApk", "when": "resourceLangId == a-plus", "group": "aplus@6" },
+        { "command": "a-plus.packageIos", "when": "resourceLangId == a-plus", "group": "aplus@7" },
+        { "command": "a-plus.packageAll", "when": "resourceLangId == a-plus", "group": "aplus@8" },
+        { "command": "a-plus.packageExtension", "when": "resourceLangId == a-plus", "group": "aplus@9" },
+        { "command": "a-plus.newProject", "when": "resourceLangId == a-plus", "group": "aplus@10" },
+        { "command": "a-plus.libraryManager", "when": "resourceLangId == a-plus || resourceExt == .axml", "group": "aplus@12" }
+      ],
+      "editor/context": [
+        { "command": "a-plus.buildWithPicker", "when": "editorLangId == a-plus", "group": "aplus@0" },
+        { "command": "a-plus.run", "when": "editorLangId == a-plus", "group": "aplus@1" },
+        { "command": "a-plus.packageWeb", "when": "editorLangId == a-plus", "group": "aplus@2" },
+        { "command": "a-plus.packageExe", "when": "editorLangId == a-plus", "group": "aplus@3" },
+        { "command": "a-plus.packageLinux", "when": "editorLangId == a-plus", "group": "aplus@4" },
+        { "command": "a-plus.packageMacos", "when": "editorLangId == a-plus", "group": "aplus@5" },
+        { "command": "a-plus.packageApk", "when": "editorLangId == a-plus", "group": "aplus@6" },
+        { "command": "a-plus.packageIos", "when": "editorLangId == a-plus", "group": "aplus@7" },
+        { "command": "a-plus.packageAll", "when": "editorLangId == a-plus", "group": "aplus@8" },
+        { "command": "a-plus.packageExtension", "when": "editorLangId == a-plus", "group": "aplus@9" },
+        { "command": "a-plus.newProject", "when": "editorLangId == a-plus", "group": "aplus@10" },
+        { "command": "a-plus.libraryManager", "when": "editorLangId == a-plus", "group": "aplus@12" }
+      ]
+    }
+  },
+  "configurationDefaults": {
+    "editor.semanticTokenColorCustomizations": {
+  "enabled": true,
+  "rules": {
+    "variable": "#5fffbc",
+    "function": "#ffff4d",
+    "class": "#38ffd7",
+    "interface": "#ff88ff"
+  }
+  }
+  }
+}

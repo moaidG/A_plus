@@ -1,0 +1,27 @@
+# Arrays in A+
+let arr = [10, 20, 30, 40, 50]
+
+# Access by index
+print("First: " + arr[0])
+print("Last: " + arr[4])
+
+# Modify
+arr[2] = 35
+print("Modified: " + arr[2])
+
+# Built-in methods (use parentheses)
+arr.push(60)
+print("After push: " + arr[4])
+
+let last = arr.pop()
+print("Popped: " + last)
+
+print("Length: " + arr.len())
+
+let mixed = ["text", 42, true, 3.14]
+print("Mixed: " + mixed[0])
+
+# For-in loop
+for (val in arr) {
+    print("Val: " + val)
+}

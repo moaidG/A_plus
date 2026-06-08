@@ -1,0 +1,8 @@
+# Console Clear Demo - مسح الشاشة
+print("=== Console Clear Demo ===")
+print("سوف تمسح الشاشة بعد ثانيتين...")
+sleep(2000)
+consoleClear()
+print("الشاشة نظيفة!")
+مسحشاشة()
+print("تم المسح مرة أخرى!")

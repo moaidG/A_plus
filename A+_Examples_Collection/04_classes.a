@@ -1,0 +1,54 @@
+# ============================================================
+# 04: Classes & Objects
+# ============================================================
+# الكائنات والصنوف
+
+# Simple class
+class Person {
+    let name
+    let age
+
+    func init(n, a) {
+        self.name = n
+        self.age = a
+    }
+
+    func greet() {
+        print("Hi, I'm " + self.name + " (" + this.age + ")")
+    }
+}
+
+let p = new Person()
+p.init("A+ User", 1)
+p.greet()
+
+# Class with field defaults + self/this
+class Counter {
+    let count = 0
+
+    func increment() {
+        self.count = self.count + 1
+    }
+
+    func reset() {
+        this.count = 0
+    }
+
+    func show() {
+        print("Count: " + self.count)
+    }
+}
+
+let c = new Counter()
+c.increment()
+c.increment()
+c.show()
+c.reset()
+c.show()
+
+# Static fields
+class Config {
+    static let appName = "A+ Language"
+    static let version = "1.0"
+}
+print(Config.appName + " v" + Config.version)

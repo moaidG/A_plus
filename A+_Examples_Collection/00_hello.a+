@@ -1,0 +1,27 @@
+# ============================================================
+# 00: Hello World - A+ Basics
+# ============================================================
+# مرحباً بالعالم - أساسيات لغة A+
+
+# Simple print
+print("Hello, A+ World!")
+اطبع("مرحباً بعالم A+!")
+
+# Variables
+let name = "A+ Language"
+let year = 2026
+print("Welcome to " + name + " (" + year + ")")
+
+# User input
+print("Enter your name:")
+let user = input()
+print("Hello " + user)
+
+# Type checking
+let x = 42
+if (typeof(x) == "number") {
+    print("x is a number")
+}
+
+# Platform info
+print("Platform: " + platform())

@@ -1,0 +1,42 @@
+# ============================================================
+# 03: Arrays & Lists
+# ============================================================
+# المصفوفات والقوائم
+
+# Create array
+let arr = [10, 20, 30, 40, 50]
+print("Array: " + arr)
+
+# Indexing
+print("First: " + arr.get(0))
+print("Third: " + arr.get(2))
+
+# Length
+print("Length: " + arr.len())
+
+# Push (append)
+arr.push(60)
+print("After push: " + arr)
+
+# Mixed types
+let mixed = [1, "hello", 3.14, true]
+print("Mixed: " + mixed)
+
+# Nested arrays
+let matrix = [[1, 2], [3, 4]]
+print("Matrix[0][1]: " + matrix.get(0).get(1))
+
+# Iteration
+let sum = 0
+for (val in arr) {
+    sum = sum + val
+}
+print("Sum: " + sum)
+
+# Arrays in functions
+func sum_array(items) {
+    let total = 0
+    for (v in items) { total = total + v }
+    return total
+}
+print("sum_array([1,2,3,4,5]) = " + sum_array([1, 2, 3, 4, 5]))

@@ -1,0 +1,9 @@
+# Console Library Example
+include "lib_console.a"
+
+printLine("Using A+ library!")
+printLine("Counting items:")
+
+let data = [1, 2, 3, 4, 5]
+print("Count: " + count(data))
+printList(data)

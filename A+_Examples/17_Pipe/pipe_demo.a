@@ -1,0 +1,25 @@
+// Pipe operator | 
+
+func double(x) { return x * 2 }
+func add(a, b) { return a + b }
+func multiply(a, b) { return a * b }
+
+// Basic pipe
+let result = 5 | double
+print("5 | double = " + result)
+
+// Pipe with function call
+let result2 = 5 | add(3)
+print("5 | add(3) = " + result2)
+
+// Chained pipe
+let result3 = 5 | double | add(3)
+print("5 | double | add(3) = " + result3)
+
+// Pipe with multiple args
+let result4 = 10 | multiply(2) | add(5)
+print("10 | multiply(2) | add(5) = " + result4)
+
+// Pipe mixed with arithmetic
+let result5 = 5 | double + 3
+print("5 | double + 3 = " + result5)
